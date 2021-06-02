@@ -12,7 +12,7 @@ import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.swing.border.Border;
 
-//another test
+//test from mac
 
 public class Main extends Canvas{  
     
