@@ -12,6 +12,8 @@ import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.swing.border.Border;
 
+//another test
+
 public class Main extends Canvas{  
     
     public static int count = -1;
