@@ -28,23 +28,14 @@ public class Inputs extends Thread {
                 
                 
                 Robot robot = new Robot();
-                robot.keyPress(KeyEvent.VK_W);
-                robot.delay(100);
-                robot.keyRelease(KeyEvent.VK_W);
-                robot.delay(100);
-                robot.keyPress(KeyEvent.VK_A);
-                robot.delay(100);
-                robot.keyRelease(KeyEvent.VK_A);
-                robot.delay(100);
-                robot.keyPress(KeyEvent.VK_S);
-                robot.delay(100);
-                robot.keyRelease(KeyEvent.VK_S);
-                robot.delay(100);
-                robot.keyPress(KeyEvent.VK_D);
-                robot.delay(100);
-                robot.keyRelease(KeyEvent.VK_D);
-                robot.delay(100);
                 
+                for (Integer n : Main.keyList) {
+                    robot.keyPress(107);
+                    robot.delay(100);
+                    robot.keyRelease(107);
+                    robot.delay(100);
+                }
+
                 
             } catch (Exception e) {
                 System.out.println("Exception is caught");

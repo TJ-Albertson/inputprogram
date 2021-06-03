@@ -7,6 +7,8 @@ package com.mycompany.runningincircle;
 
 import java.awt.*; 
 import java.awt.event.ActionEvent;
+import java.awt.event.*;
+import java.security.Key;
 import java.util.*;
 import javax.swing.*;   
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
@@ -17,11 +19,12 @@ import javax.swing.border.Border;
 public class Main extends Canvas{  
     
     public static int count = -1;
-    
+
+    public static ArrayList<Integer> keyList;
     
     public static void main(String[] args) {  
         
-        JFrame f = new JFrame("Circle Runner");    
+        JFrame f = new JFrame("Inputter");    
         
         JButton b1 = new JButton("Start");  
         b1.setBounds(265,320,95,30);
@@ -47,7 +50,14 @@ public class Main extends Canvas{
         JButton b3 = new JButton("add inp");  
         b3.setBounds(180,17,75,25);
         b3.setBackground(Color.LIGHT_GRAY);
+
+        keyList = new ArrayList<Integer>();
+
         
+        System.out.println("KeyEvent: " + KeyEvent.VK_W);
+        System.out.println("KeyStroke: " + KeyStroke.getKeyStroke('W', 0).getKeyCode());
+
+
         b1.addActionListener((ActionEvent e) -> {      
             count++;
             list.add(new Inputs());
@@ -59,8 +69,14 @@ public class Main extends Canvas{
         }); 
         
         b3.addActionListener((ActionEvent e) -> {
-            listModel.addElement("bruh");             
+            String temp = t1.getText();
+            char ch = temp.charAt(0);
+            listModel.addElement(t1.getText());
+            keyList.add(KeyStroke.getKeyStroke(ch, 0).getKeyCode());             
         }); 
+
+
+
         
         f.add(b1);
         f.add(b2);
